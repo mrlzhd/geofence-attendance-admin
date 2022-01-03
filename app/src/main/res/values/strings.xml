@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GeofencingAdmin</string>
+
+
+    <string name="Hello_Text">Strictly for admin only!</string>
+    <string name="Hello_Text2">Please register using your ID</string>
+
+    <string name="register_ins">Please select your class from the list below and click submit</string>
+</resources>
