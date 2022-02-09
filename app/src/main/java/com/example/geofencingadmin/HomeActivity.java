@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        btn_gotoStart.setVisibility(View.INVISIBLE);
+       // btn_gotoStart.setVisibility(View.INVISIBLE);
 
         btn_gotoStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,26 +72,26 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        IDNum = Prevalent.currentOnlineUser.getMatric();
-        DatabaseReference databaseReference;
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        databaseReference.keepSynced(true);
-
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.child(dbName).child(IDNum).exists())
-                {
-                    btn_gotoStart.setVisibility(View.VISIBLE);
-                    btn_gotoEnd.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+//        IDNum = Prevalent.currentOnlineUser.getMatric();
+//        DatabaseReference databaseReference;
+//        databaseReference = FirebaseDatabase.getInstance().getReference();
+//        databaseReference.keepSynced(true);
+//
+//        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if (snapshot.child(dbName).child(IDNum).exists())
+//                {
+//                    btn_gotoStart.setVisibility(View.VISIBLE);
+//                    btn_gotoEnd.setVisibility(View.VISIBLE);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
