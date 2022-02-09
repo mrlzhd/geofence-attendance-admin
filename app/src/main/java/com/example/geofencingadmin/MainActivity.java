@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(namaSubjek))
         {
-            Toast.makeText(MainActivity.this, "Please fill in", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Please fill in your class name", Toast.LENGTH_SHORT).show();
 
         }
 
@@ -104,11 +104,11 @@ public class MainActivity extends AppCompatActivity {
 
                                     if (task.isSuccessful())
                                     {
-                                        Toast.makeText(MainActivity.this, "Data untuk matrik dah update", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, "Your class have been registered", Toast.LENGTH_SHORT).show();
                                     }
                                     else
                                     {
-                                        Toast.makeText(MainActivity.this, "Data untuk matrik tak boleh update", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, "Network error", Toast.LENGTH_SHORT).show();
                                     }
 
 
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, "Subjek dah ada", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Subject already exist", Toast.LENGTH_SHORT).show();
                 }
 
                 if (!(snapshot).child(parentDBName).child(namaSubjek).exists())
@@ -134,11 +134,11 @@ public class MainActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful())
                                     {
-                                        Toast.makeText(MainActivity.this, "Data untuk latlong dah update", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
                                     }
                                     else
                                     {
-                                        Toast.makeText(MainActivity.this, "Data untuk latlong tak boleh update", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
                                     }
 
 
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
                 else
                 {
-                    Toast.makeText(MainActivity.this, "Latitude longitude dah ada", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
                 }
 
 
