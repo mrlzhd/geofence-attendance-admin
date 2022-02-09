@@ -20,9 +20,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import io.paperdb.Paper;
+
 public class HomeActivity extends AppCompatActivity {
 
-    private Button btn_gotoClass, btn_gotoStart, btn_gotoEnd;
+    private Button btn_gotoClass, btn_gotoStart, btn_gotoEnd, btn_logout;
     TextView tv_date;
 
     String dbName = "SubjectListLecturer";
@@ -36,6 +38,8 @@ public class HomeActivity extends AppCompatActivity {
         btn_gotoClass = findViewById(R.id.btn_gotoSubmit);
         btn_gotoStart = findViewById(R.id.btn_gotoStart);
         btn_gotoEnd = findViewById(R.id.btn_gotoEnd);
+
+        btn_logout = findViewById(R.id.btn_logout);
 
         tv_date = findViewById(R.id.tv_date);
 
@@ -79,13 +83,22 @@ public class HomeActivity extends AppCompatActivity {
                 if (snapshot.child(dbName).child(IDNum).exists())
                 {
                     btn_gotoStart.setVisibility(View.VISIBLE);
-                    btn_gotoEnd.setVisibility(View.INVISIBLE);
+                    btn_gotoEnd.setVisibility(View.VISIBLE);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent logout = new Intent(HomeActivity.this, LandingPage.class);
+                Paper.book().destroy();
+                startActivity(logout);
             }
         });
 

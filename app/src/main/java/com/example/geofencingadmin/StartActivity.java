@@ -171,7 +171,7 @@ public class StartActivity extends AppCompatActivity {
 
                                     if (task.isSuccessful())
                                     {
-                                        Toast.makeText(StartActivity.this, "Your class now ended", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(StartActivity.this, "Your class now starting", Toast.LENGTH_SHORT).show();
                                     }
 
                                 }
